@@ -67,7 +67,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
 <!-- Body BEGIN -->
 <body class="ecommerce">
     <!-- BEGIN STYLE CUSTOMIZER -->
-    <div class="color-panel hidden-sm">
+    <!-- <div class="color-panel hidden-sm">
       <div class="color-mode-icons icon-color"></div>
       <div class="color-mode-icons icon-color-close"></div>
       <div class="color-mode">
@@ -81,7 +81,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
           <li class="color-turquoise" data-style="turquoise"></li>
         </ul>
       </div>
-    </div>
+    </div> -->
     <!-- END BEGIN STYLE CUSTOMIZER --> 
 
     <!-- BEGIN TOP BAR -->
@@ -320,7 +320,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
                   <div class="header-navigation-content">
                     <div class="row">
                       <?php require("db.php") ?>
-                      <?php $sql = "SELECT * FROM products";
+                      <?php $sql = "SELECT * FROM products LIMIT 4";
   $result = $conn->query($sql);?>
                     <?php
   // Connect to database
@@ -435,7 +435,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
           while ($row = $result->fetch_assoc()) {
             $active = ($i == 0) ? 'active' : '';
             ?>
-            <div class="item carousel-item-four <?php echo $active; ?>">
+            <div style="background-size: cover; background-position: center center; background-image: url(<?php echo $row['image_url']; ?>);" class="item carousel-item-four <?php echo $active; ?>">
               <div class="container">
                 <div class="carousel-position-four text-center">
                   <h2 class="margin-bottom-20 animate-delay carousel-title-v3 border-bottom-title text-uppercase" data-animation="animated fadeInDown">
@@ -445,149 +445,80 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
                     <?php echo $row['subtitle']; ?>
                   </p>
                 </div>
-            
-<img src="<?php echo $row['image_url']; ?>" alt="<?php echo $row['title']; ?>" class="img-responsive" data-animation="animated fadeInUp">
-</div>
-</div>
-<?php
-     $i++;
-   }
-   ?>
-</div>
-<!-- Controls -->
-<a class="left carousel-control carousel-control-shop" href="#carousel-example-generic" role="button" data-slide="prev">
-  <span class="fa fa-angle-left" aria-hidden="true"></span>
-  <span class="sr-only">Previous</span>
-</a>
-<a class="right carousel-control carousel-control-shop" href="#carousel-example-generic" role="button" data-slide="next">
-  <span class="fa fa-angle-right" aria-hidden="true"></span>
-  <span class="sr-only">Next</span>
-</a>
-</div>
-</div>
-<?php
-// Close the database connection
-$conn->close();
-?>
+                
+              </div>
+              </div>
+              <?php
+                  $i++;
+                }
+                ?>
+              </div>
+              <!-- Controls -->
+              <a class="left carousel-control carousel-control-shop" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control carousel-control-shop" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+              </div>
+              </div>
+              <?php
+              // Close the database connection
+              $conn->close();
+              ?>
                 <!-- Second slide -->
                 
     
     <!-- END SLIDER -->
-
+              </div> 
+              
     <div class="main">
       <div class="container">
-        <!-- BEGIN SALE PRODUCT & NEW ARRIVALS -->
-        <div class="row margin-bottom-40">
-          <!-- BEGIN SALE PRODUCT -->
-          <div class="col-md-12 sale-product">
-            <h2>New Arrivals</h2>
-            <div class="owl-carousel owl-carousel5">
-              <div>
-                <div class="product-item">
-                  <div class="pi-img-wrapper">
-                    <img src="assets/pages/img/products/model1.jpg" class="img-responsive" alt="Berry Lace Dress">
-                    <div>
-                      <a href="assets/pages/img/products/model1.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                    </div>
-                  </div>
-                  <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
-                  <div class="pi-price">$29.00</div>
-                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                  <div class="sticker sticker-sale"></div>
-                </div>
-              </div>
-              <div>
-                <div class="product-item">
-                  <div class="pi-img-wrapper">
-                    <img src="assets/pages/img/products/model2.jpg" class="img-responsive" alt="Berry Lace Dress">
-                    <div>
-                      <a href="assets/pages/img/products/model2.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                    </div>
-                  </div>
-                  <h3><a href="shop-item.html">Berry Lace Dress2</a></h3>
-                  <div class="pi-price">$29.00</div>
-                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                </div>
-              </div>
-              <div>
-                <div class="product-item">
-                  <div class="pi-img-wrapper">
-                    <img src="assets/pages/img/products/model6.jpg" class="img-responsive" alt="Berry Lace Dress">
-                    <div>
-                      <a href="assets/pages/img/products/model6.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                    </div>
-                  </div>
-                  <h3><a href="shop-item.html">Berry Lace Dress2</a></h3>
-                  <div class="pi-price">$29.00</div>
-                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                </div>
-              </div>
-              <div>
-                  <div class="product-item">
-                    <div class="pi-img-wrapper">
-                      <img src="assets/pages/img/products/model4.jpg" class="img-responsive" alt="Berry Lace Dress">
-                      <div>
-                        <a href="assets/pages/img/products/model4.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                        <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                      </div>
-                    </div>
-                    <h3><a href="javascript:;">Berry Lace Dress4</a></h3>
-                    <div class="pi-price">$29.00</div>
-                    <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                    <div class="sticker sticker-new"></div>
-                  </div>
-              </div>
-              <div>
-                <div class="product-item">
-                  <div class="pi-img-wrapper">
-                    <img src="assets/pages/img/products/model5.jpg" class="img-responsive" alt="Berry Lace Dress">
-                    <div>
-                      <a href="assets/pages/img/products/model5.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                    </div>
-                  </div>
-                  <h3><a href="shop-item.html">Berry Lace Dress5</a></h3>
-                  <div class="pi-price">$29.00</div>
-                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                </div>
-              </div>
-              <div>
-                <div class="product-item">
-                  <div class="pi-img-wrapper">
-                    <img src="assets/pages/img/products/model3.jpg" class="img-responsive" alt="Berry Lace Dress">
-                    <div>
-                      <a href="assets/pages/img/products/model3.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                    </div>
-                  </div>
-                  <h3><a href="shop-item.html">Berry Lace Dress3</a></h3>
-                  <div class="pi-price">$29.00</div>
-                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                </div>
-              </div>
-              <div>
-                <div class="product-item">
-                  <div class="pi-img-wrapper">
-                    <img src="assets/pages/img/products/model7.jpg" class="img-responsive" alt="Berry Lace Dress">
-                    <div>
-                      <a href="assets/pages/img/products/model7.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                    </div>
-                  </div>
-                  <h3><a href="shop-item.html">Berry Lace Dress3</a></h3>
-                  <div class="pi-price">$29.00</div>
-                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- END SALE PRODUCT -->
-        </div>
-        <!-- END SALE PRODUCT & NEW ARRIVALS -->
+      <?php require("db.php")?>
+      <?php $sql = "SELECT * FROM products";
+      $result = $conn->query($sql);?>
+      <?php
 
+          echo '<div class="row margin-bottom-40">';
+          echo '<div class="col-md-12 sale-product">';
+          echo '<h2>New Arrivals</h2>';
+          echo '<div class="owl-carousel owl-carousel5">';
+          if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()){
+              
+              echo '<div>';
+              echo '<div class="product-item">';
+              echo '<div class="pi-img-wrapper">';
+              echo '<img src="assets/pages/img/products/' . $row['product_image'] . '" class="img-responsive" alt="' . $row["product_name"] .  '">';
+              echo '<div>';
+              
+              echo '<a href="assets/pages/img/products/' . $row["product_image"] . '" class="btn btn-default fancybox-button">Zoom</a>';
+              echo '<a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>';
+              echo '</div>';
+              echo '</div>';
+              echo '<h3><a href="shop-item.html">' . $row['product_name'] . '</a></h3>';
+              echo '<div class="pi-price">' . $row['product_price'] . '</div> ₺';
+              echo '<a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>';
+              echo '<div class="sticker sticker-new"></div>';
+              echo '</div>';
+              echo '</div>';
+    
+            }
+          }
+          else{
+            echo "No products found";
+          }
+          echo '</div>';
+          echo '</div>';
+          echo '</div>';
+        
+        
+         
+          // Close the database connection
+          $conn->close();
+          ?>
         <!-- BEGIN SIDEBAR & CONTENT -->
         <div class="row margin-bottom-40 ">
           <!-- BEGIN SIDEBAR -->
